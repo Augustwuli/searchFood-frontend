@@ -1,0 +1,54 @@
+.login-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .logo{
+    margin-top: 140px;
+    margin-bottom: 200px;
+    img{
+      width: 200px;
+      height: 200px;
+    }
+  }
+  .form-input{
+    border-bottom: 1px solid #333; /*no*/
+    input{
+      text-align: center;
+      border: none;
+      outline: none;
+      height: 80px;
+      font-size: 34px;
+      width: 500px;
+    }
+  }
+  .form-group{
+    text-align: center;
+    margin-top: 10px;
+    .login-btn{
+      margin-top: 100px; 
+      border-radius: 60px;
+      margin-bottom: 40px;
+      font-size: 34px; 
+      color: #333;
+      width: 100%;
+    }
+    button{
+      height: 80px;
+      background: #FFCD5F;
+      border: none;
+    }
+  }
+  .form-link{
+    width: 500px;
+    position: absolute;
+    bottom: 50px;
+  }
+  .link-style{
+    display: block;
+    margin-top: 10px; 
+    text-align: center;
+    color:#757575;
+    text-decoration: none;
+    font-size: 26px;
+  }
+}
