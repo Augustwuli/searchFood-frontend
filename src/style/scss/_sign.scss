@@ -1,41 +1,19 @@
 .sign-page{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .logo{
-    margin-top: 140px;
-    margin-bottom: 200px;
-    img{
-      width: 200px;
-      height: 200px;
-    }
-  }
   .form-input{
-    border-bottom: 1px solid #333; /*no*/
-    width: 500px;
-    height: 80px;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    input{
-      border: none;
-      outline: none;
-      height: 80px;
-      font-size: 34px;
-      width: 300px;
-    }
     .validate-code{
+      position: absolute;
+      right: -33px;
+      top: 0;
       width: 200px;
-      height: 80px;
+      height: 85px;
       color: #fff;
       font-size: 28px;
       border: none;
-      background: #FF954D;
+      background: #FF954D; 
     }
   }
-  .sign-btn{
-    width: 500px;
+  .btn{
+    width: 530px;
     height: 80px;
     border: none;
     color: #fff;

@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     getData () {
-      this.$api.get('topics', null, r => {
+      this.$api.get('testapi/getInfo', null, r => {
         this.list = r.data
         console.log(r)
       })

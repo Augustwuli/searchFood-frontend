@@ -55,8 +55,16 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
-      inject: true
+      inject: true,
+      // chunks: ['app'], //需要引入chunks，不配置会引入页面所有资源
     }),
+    /*二级子页面*/
+    // new HtmlWebpackPlugin({
+    //   filename: 'subpage.html',
+    //   template: 'subpage.html',
+    //   inject: true,
+    //   chunks: ['sub'],
+    // }),
     // copy custom static assets
     new CopyWebpackPlugin([
       {

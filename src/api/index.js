@@ -1,5 +1,6 @@
 // 配置API接口地址
-const root = '/api/v1'
+// const root = '/api/v1'
+const root = 'http://rap2api.taobao.org/app/mock/118764/'
 // 引用 axios
 const axios = require('axios')
 // 自定义判断元素类型
@@ -35,6 +36,7 @@ function apiAxios (method, url, params, success, failure) {
     withCredentials: false
   })
     .then(function (res) {
+      console.log(res)
       if (res.data.success === true) {
         if (success) {
           success(res.data)

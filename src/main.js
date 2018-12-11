@@ -7,7 +7,7 @@ import router from './router'
 import api from './api'
 // 引入公共函数文件
 import utils from './utils'
-import 'lib-flexible/flexible.js'
+import 'lib-flexible/flexible'
 
 // 将 api 方法绑定到全局
 Vue.prototype.$api = api

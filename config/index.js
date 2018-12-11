@@ -11,12 +11,16 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/api/v1/**': {
-        target: 'https://cnodejs.org', // 你接口的域名
-        secure: false,
-        changeOrigin: false,
-      }
-      
+      // '/api/v1/**': {
+      //   target: 'https://cnodejs.org', // 你接口的域名
+      //   secure: false,
+      //   changeOrigin: false,
+      // }
+      // '/app/mock/118764/**': {
+      //   target: 'http://rap2api.taobao.org', // 你接口的域名
+      //   secure: false,
+      //   changeOrigin: false,
+      // }
     },
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -52,6 +56,7 @@ module.exports = {
   build: {
     // Template for index.html
     index: path.resolve(__dirname, '../dist/index.html'),
+    // subpage: path.resolve(__dirname, '../dist/subpage.html'), //添加二级子页面
 
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),

@@ -1,0 +1,115 @@
+.topic-tab{
+  margin-top: 130px;
+  .topic-list{
+    .list-block{
+      margin-bottom: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      .list-img{
+        width: 90%;
+        border-radius: 10px; 
+      }
+      .mask{
+        color: #333;
+        width: 90%;
+        height: 100px;
+        position: absolute;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.5);
+        text-align: center;
+        font-size: 32px;
+        border-bottom: 10px; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .num{
+          font-size: 26px;
+          color: #000;
+        }
+        p{
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+.discuss-tab{
+  margin-top: 130px;
+  .discuss-list{
+    .list-block{
+      .list-info{
+        padding: 40px;
+        border-bottom: 1px solid #f4f4f4; 
+        .list-person{
+          display: flex;
+          flex-direction: row;
+          .person-image{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%; 
+          }
+          .person-info{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #A1AFBB;
+            margin-left: 30px;
+            .person-name{
+              color: #000;
+              font-size: 28px;
+            }
+            p{
+              margin: 0px;
+            }
+          }
+        }
+        .list-content{
+          margin-top: 20px;
+          font-size: 28px;
+        }
+      }
+      .list-data{
+        border-bottom: 10px solid #f4f4f4;
+        height: 80px; 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: center;
+        .list-icon{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+.follow-tab{
+  margin-top: 130px;
+  .follow-list{
+    .list-block{
+      padding: 10px 20px;
+      display: flex;
+      flex-direction: row;
+      font-size: 28px;
+      border-bottom: 15px solid #f4f4f4;
+      img{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%; 
+      }
+      .list-info{
+        margin-left: 40px;
+        line-height: 80px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        .do{
+          color: #A1AFBB;
+        }
+      }
+    }
+  }
+}

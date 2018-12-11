@@ -1,0 +1,128 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+#app{
+  footer{
+    text-align: center;
+    height: 200px;
+  }
+  .column-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    background: #FFCD5F;
+    img{
+      margin-top: 30px;
+      width: 50px;
+      height: 50px; 
+      margin-left: 20px; 
+      }
+    span{
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+      color: #fff;
+      font-size: 36px;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      z-index: -1;
+      }
+    }
+  .logo{
+    margin-top: 200px;
+    margin-bottom: 160px;
+    img{
+      width: 200px;
+      height: 200px;
+    }
+  }
+  .tabar{
+    background: #fff;
+    width: 100%;
+    border-top: 2px solid #F2F2F2; /*no*/ 
+    padding-bottom: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100px;
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    .tabar-icon{
+      margin-top: 10px; 
+      width: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img{
+        width: 50px;
+      }
+      p{
+        color: #A2A2A2;
+        margin-top: 10px;
+      }
+      .active{
+        color: #FF954D;
+      }
+    }
+    .tabar-add{
+      position: relative;
+      bottom: 50px;
+      background: #fff;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;  
+      border-top: 2px solid #F2F2F2; /*no*/
+      img{
+        width: 120px;  
+      }
+    }
+  }
+  .search{
+    position: fixed;
+    z-index: 2;
+    top:0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background:#fff;
+    width: 100%;
+    height: 80px;
+    img{
+      width: 50px;
+      height: 50px;
+    }
+    .form-search{
+      position: relative;
+      width: 500px;
+      .search-img{
+        width: 36px;
+        height: 36px;
+        position: absolute;
+        left: 30px;
+        top: 8px;
+      }
+      input{
+        font-size: 26px;
+        outline: none;
+        background: #F3F2F0;
+        border: none;
+        width: 420px;
+        height: 50px;
+        padding-left: 80px; 
+        border-radius: 8px; 
+      }
+    }
+  }
+}

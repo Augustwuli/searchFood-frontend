@@ -1,0 +1,29 @@
+/*按钮样式*/
+.btn{
+  width: 530px;
+  height: 80px;
+  border: none;
+  color: #fff;
+  font-size: 30px;
+  background: #FFCD5F;
+  margin-top: 100px;
+  border-radius: 60px; 
+}
+/*输入框样式*/
+.form-input{
+  width: 500px; 
+  height: 80px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  input{
+    outline: none;
+    height: 80px;
+    font-size: 32px;
+    width: 500px;
+    border: 1px solid #717171;
+    padding-left:30px; 
+  }
+}
