@@ -1,6 +1,7 @@
 // 配置API接口地址
 // const root = '/api/v1'
-const root = 'http://rap2api.taobao.org/app/mock/118764/'
+// const root = 'http://rap2api.taobao.org/app/mock/118764/'
+const root = '/api'
 // 引用 axios
 const axios = require('axios')
 // 自定义判断元素类型

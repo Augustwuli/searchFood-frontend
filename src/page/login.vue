@@ -3,10 +3,10 @@
     <myLogo></myLogo>
     <form>
       <div class="form-group form-input">
-        <input type="text" placeholder="请输入手机号码">
+        <input v-modle="phone" type="text" placeholder="请输入手机号码">
       </div>
       <div class="form-group form-input">
-        <input type="password" placeholder="请输入密码">
+        <input v-model="password" type="password" placeholder="请输入密码">
       </div>
       <div class="form-group">
         <button class="login-btn" @click="login">登 录</button>
@@ -22,9 +22,28 @@
 import myLogo from '../components/logo.vue'
 export default {
   components: {myLogo},
+  data () {
+    return {
+      phone: '',
+      password: ''
+    }
+  },
   methods: {
     login () {
-      this.$router.push({name: 'Home'})
+      if (this.phone ==='') {
+        window.alert('手机号码不能为空')
+      } else if ( this.password === '') {
+        window.alert('密码不能为空')
+      } else {
+        let param = {
+          phone: this.phone,
+          password: this.password
+        }
+        this.$api.post('/users/login', param, r => {
+          // this.$router.push({name: 'Home'})
+        })
+      }
+      
     }
   }
 }

@@ -21,6 +21,13 @@ module.exports = {
       //   secure: false,
       //   changeOrigin: false,
       // }
+      '/api': {
+        target: 'http://localhost:3000', // 你接口的域名
+        changeOrigin: true,
+        pathRewrite:{
+          '^/api':''
+        }
+      }
     },
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

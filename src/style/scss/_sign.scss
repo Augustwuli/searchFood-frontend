@@ -5,11 +5,14 @@
       right: -33px;
       top: 0;
       width: 200px;
-      height: 85px;
+      height: 84px;
       color: #fff;
       font-size: 28px;
       border: none;
       background: #FF954D; 
+    }
+    .wait{
+      background: #717171;
     }
   }
   .btn{
@@ -21,6 +24,9 @@
     background: #FFCD5F;
     margin-top: 100px;
     border-radius: 60px; 
+  }
+  .active{
+    background: #e2e2e2;
   }
 }
 
