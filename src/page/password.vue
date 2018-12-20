@@ -54,6 +54,7 @@ export default {
           password: password
         }
         this.$api.post('/users/sign', param, r => {
+          console.log(r)
           this.$router.replace({name: 'Login'})
         })
       }

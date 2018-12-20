@@ -3,7 +3,7 @@
     <myLogo></myLogo>
     <form>
       <div class="form-group form-input">
-        <input v-modle="phone" type="text" placeholder="请输入手机号码">
+        <input v-model="phone" type="text" placeholder="请输入手机号码">
       </div>
       <div class="form-group form-input">
         <input v-model="password" type="password" placeholder="请输入密码">
@@ -30,20 +30,22 @@ export default {
   },
   methods: {
     login () {
-      if (this.phone ==='') {
+      if (this.phone === '') {
         window.alert('手机号码不能为空')
-      } else if ( this.password === '') {
+      } else if (this.password === '') {
         window.alert('密码不能为空')
       } else {
+        // 登录暂无加密处理
         let param = {
           phone: this.phone,
           password: this.password
         }
         this.$api.post('/users/login', param, r => {
-          // this.$router.push({name: 'Home'})
+          if (r.statu === 1) {
+            this.$router.push({name: 'Home'})
+          }
         })
       }
-      
     }
   }
 }
