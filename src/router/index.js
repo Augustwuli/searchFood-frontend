@@ -15,6 +15,7 @@ import Discuss from '@/page/discuss'
 import Follow from '@/page/follow'
 import Add from '@/page/add'
 import MessageList from '@/page/message_list'
+import Person from '@/page/person'
 
 Vue.use(Router)
 
@@ -44,6 +45,11 @@ export default new Router({
       path: '/password',
       name: 'Password',
       component: Password
+    },
+    {
+      path: '/person',
+      name: 'Person',
+      component: Person
     },
     {
       path: '/add',
@@ -92,7 +98,7 @@ export default new Router({
         component: Message
       },
       {
-        path: 'my',
+        path: '/my',
         name: 'My',
         component: My
       }]

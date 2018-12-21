@@ -3,7 +3,7 @@
       <header>个人中心</header>
       <div class="head">
           <img src="../assets/header.jpg" class="head-img">
-          <div class="person-info">
+          <div class="person-info" @click="jumpTo('Person')">
             <div class="person-name">我是小 fa </div>
             <div class="person-description">个性签名个性签名个性签名</div>
           </div>
@@ -44,6 +44,11 @@ export default {
           url: require('../assets/set.png'),
           name: '设置'
         }]
+    }
+  },
+  methods: {
+    jumpTo (pageName) {
+      this.$router.push({name: pageName})
     }
   }
 }
