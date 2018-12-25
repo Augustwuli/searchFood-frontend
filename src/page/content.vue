@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     getData () {
-      this.$api.get('topic/' + this.id, null, r => {
+      this.$api.get(null, 'topic/' + this.id, null, r => {
         this.dat = r.data
       })
     }

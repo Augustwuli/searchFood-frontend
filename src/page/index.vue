@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     getData () {
-      this.$api.get('/', null, r => {
+      this.$api.get(null, '/', null, r => {
         this.list = r.data
         console.log(r)
       })

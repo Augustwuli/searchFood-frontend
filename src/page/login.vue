@@ -40,8 +40,9 @@ export default {
           phone: this.phone,
           password: this.password
         }
-        this.$api.post('/users/login', param, r => {
+        this.$api.post(null, '/users/login', param, r => {
           if (r.statu === 1) {
+            localStorage.setItem('jwt', r.data.jwt)
             this.$router.push({name: 'Home'})
           }
         })

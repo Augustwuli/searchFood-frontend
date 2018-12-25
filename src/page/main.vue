@@ -15,6 +15,10 @@ export default {
       currentTab: 'Home'
     }
   },
+  mounted () {
+    let jwt = localStorage.jwt
+    console.log(jwt)
+  },
   methods: {
     setCurrentTab (pageName) {
       this.currentTab = pageName

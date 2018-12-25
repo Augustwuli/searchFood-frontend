@@ -66,7 +66,7 @@ export default {
         let param = {
           phone: this.phone
         }
-        this.$api.post('/codes/sign', param, r => {
+        this.$api.post(null, '/codes/sign', param, r => {
           this.coder = r.data.code
           this.publicPem = r.data.publicPem
         })

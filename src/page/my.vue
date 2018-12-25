@@ -46,7 +46,16 @@ export default {
         }]
     }
   },
+  mounted () {
+    this.getUserInfo()
+  },
   methods: {
+    getUserInfo () {
+      let jwt = localStorage.jwt
+      this.$api.get(jwt, '/', null, r => {
+        console.log('成功')
+      })
+    },
     jumpTo (pageName) {
       this.$router.push({name: pageName})
     }
