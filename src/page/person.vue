@@ -8,7 +8,7 @@
     <div class="person-info">
       <div class="info-item">
         <span>昵称</span>
-        <input v-model="name" type="text" >
+        <input v-model="name" type="text">
       </div>
       <div class="info-item">
         <span>性别</span>
@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="btn">
-      <button class="save-btn">保存</button>
+      <button class="save-btn" @click="save()">保存</button>
     </div>
   </div>
 </template>
@@ -33,7 +33,31 @@ export default {
       signature: ''
     }
   },
+  mounted () {
+    this.getInfo()
+  },
   methods: {
+    getInfo () {
+      this.name = localStorage.name
+      this.gender = localStorage.gender
+      this.signature = localStorage.signature
+    },
+    setInfo (name, gender, signature) {
+      localStorage.setItem('name', name)
+      localStorage.setItem('gender', gender)
+      localStorage.setItem('signature', signature)
+    },
+    save () {
+      let jwt = localStorage.jwt
+      let param = {
+        name: this.name,
+        gender: this.gender,
+        signature: this.signature
+      }
+      this.$api.post(jwt, '/users/save', param, r => {
+        this.setInfo(r.data.name, r.data.gender, r.data.signature)
+      })
+    },
     upload () {
       let uploadFile = document.getElementById('upload')
       uploadFile.onclick = () => {

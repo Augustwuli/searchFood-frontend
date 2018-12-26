@@ -1,11 +1,11 @@
 <template>
   <div class="my-page">
       <header>个人中心</header>
-      <div class="head">
+      <div class="head"  @click="jumpTo('Person')">
           <img src="../assets/header.jpg" class="head-img">
-          <div class="person-info" @click="jumpTo('Person')">
-            <div class="person-name">我是小 fa </div>
-            <div class="person-description">个性签名个性签名个性签名</div>
+          <div class="person-info">
+            <div class="person-name">{{name}}</div>
+            <div class="person-description">{{signature}}</div>
           </div>
           <img class="arrow" src="../assets/arrow.png">
       </div>
@@ -43,18 +43,40 @@ export default {
         {
           url: require('../assets/set.png'),
           name: '设置'
-        }]
+        }],
+      thumb_url: '',
+      name: '',
+      signature: ''
     }
   },
   mounted () {
-    this.getUserInfo()
+    /**
+     * 第一次向服务器获取数据，之后就存到本地
+     */
+    if (!localStorage.getUserInfo) {
+      this.getUserInfo()
+    } else {
+      this.getLocalInfo()
+    }
   },
   methods: {
     getUserInfo () {
       let jwt = localStorage.jwt
-      this.$api.get(jwt, '/', null, r => {
-        console.log('成功')
+      this.$api.get(jwt, '/users/userInfo', null, r => {
+        this.thumb_url = r.data.thumb_url
+        this.name = r.data.name
+        this.signature = r.data.signature
+        localStorage.setItem('thumb_url', r.data)
+        localStorage.setItem('name', r.data.name)
+        localStorage.setItem('signature', r.data.signature)
+        localStorage.setItem('gender', r.data.gender)
+        localStorage.setItem('getUserInfo', true)
       })
+    },
+    getLocalInfo () {
+      this.thumb_url = localStorage.thumb_url
+      this.name = localStorage.name
+      this.signature = localStorage.signature
     },
     jumpTo (pageName) {
       this.$router.push({name: pageName})
