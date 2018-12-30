@@ -53,11 +53,6 @@ export default {
     /**
      * 第一次向服务器获取数据，之后就存到本地
      */
-    if (!localStorage.getUserInfo) {
-      this.getUserInfo()
-    } else {
-      this.getLocalInfo()
-    }
   },
   methods: {
     getUserInfo () {

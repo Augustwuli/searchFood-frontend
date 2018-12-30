@@ -2,8 +2,9 @@
   <div class="person-page">
     <img class="back-icon" src="../assets/back.png" @click="$router.go(-1)"/>
     <div class="head-img" @click="upload">
-      <img src="../assets/header.jpg"/>
-      <input id="upload" v-show="false" type="file" >
+      <!-- <img src="../assets/header.jpg"/> -->
+      <img :src="avatar"/>
+      <input id="upload" v-show="false" type="file" accept="image/jpg,image/jpeg,image/png" @change="changeImg($event)">
     </div>
     <div class="person-info">
       <div class="info-item">
@@ -30,7 +31,8 @@ export default {
     return {
       name: '',
       gender: '',
-      signature: ''
+      signature: '',
+      avatar: require('../assets/header.jpg')
     }
   },
   mounted () {
@@ -58,11 +60,22 @@ export default {
         this.setInfo(r.data.name, r.data.gender, r.data.signature)
       })
     },
+    changeImg (e) {
+      let file = e.target.files[0]
+      this.avatar = window.URL.createObjectURL(file)
+      let name = file.name
+      let arr = name.split('.')
+      console.log(arr)
+      let reader = new FileReader()
+      reader.onload = e => {
+        console.log(e.target.result)
+      }
+      if (file) {
+        reader.readAsDataURL(file)
+      }
+    },
     upload () {
       let uploadFile = document.getElementById('upload')
-      uploadFile.onclick = () => {
-        console.log('我被点击了')
-      }
       uploadFile.click()
     }
   }
