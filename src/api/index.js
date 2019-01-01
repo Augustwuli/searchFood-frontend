@@ -70,7 +70,10 @@ function apiAxios (auth, method, url, params, success, failure) {
       withCredentials: false
     })
       .then(function (res) {
-        console.log(res)
+        /**
+         * 开发时这个console用来测试数据
+         */
+        console.log(res) 
         if (res.data.success === true) {
           if (success) {
             success(res.data)

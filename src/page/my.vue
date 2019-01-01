@@ -53,6 +53,11 @@ export default {
     /**
      * 第一次向服务器获取数据，之后就存到本地
      */
+    if (localStorage.getInfo === true) {
+      this.getLocalInfo()
+    } else {
+      this.getUserInfo()
+    }
   },
   methods: {
     getUserInfo () {
@@ -65,7 +70,7 @@ export default {
         localStorage.setItem('name', r.data.name)
         localStorage.setItem('signature', r.data.signature)
         localStorage.setItem('gender', r.data.gender)
-        localStorage.setItem('getUserInfo', true)
+        localStorage.setItem('getInfo', true)
       })
     },
     getLocalInfo () {

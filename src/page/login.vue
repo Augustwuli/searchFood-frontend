@@ -43,6 +43,7 @@ export default {
         this.$api.post(null, '/users/login', param, r => {
           if (r.statu === 1) {
             localStorage.setItem('jwt', r.data.jwt)
+            localStorage.setItem('getInfo', false)
             this.$router.push({name: 'Home'})
           }
         })
