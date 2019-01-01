@@ -73,7 +73,7 @@ function apiAxios (auth, method, url, params, success, failure) {
         /**
          * 开发时这个console用来测试数据
          */
-        console.log(res) 
+        console.log(res)
         if (res.data.success === true) {
           if (success) {
             success(res.data)

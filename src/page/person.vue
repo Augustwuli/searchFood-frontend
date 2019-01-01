@@ -2,7 +2,6 @@
   <div class="person-page">
     <img class="back-icon" src="../assets/back.png" @click="$router.go(-1)"/>
     <div class="head-img" @click="upload">
-      <!-- <img src="../assets/header.jpg"/> -->
       <img :src="avatar"/>
       <input id="upload" v-show="false" type="file" accept="image/jpg,image/jpeg,image/png" @change="changeImg($event)">
     </div>
@@ -32,7 +31,8 @@ export default {
       name: '',
       gender: '',
       signature: '',
-      avatar: require('../assets/header.jpg')
+      avatar: require('../assets/header.jpg'),
+      avatarBase64: ''
     }
   },
   mounted () {
@@ -54,7 +54,8 @@ export default {
       let param = {
         name: this.name,
         gender: this.gender,
-        signature: this.signature
+        signature: this.signature,
+        avatar: this.avatarBase64
       }
       this.$api.post(jwt, '/users/save', param, r => {
         this.setInfo(r.data.name, r.data.gender, r.data.signature)
@@ -62,16 +63,17 @@ export default {
     },
     changeImg (e) {
       let file = e.target.files[0]
-      this.avatar = window.URL.createObjectURL(file)
       let name = file.name
       let arr = name.split('.')
       console.log(arr)
       let reader = new FileReader()
       reader.onload = e => {
+        this.avatarBase64 = e.target.result
         console.log(e.target.result)
       }
       if (file) {
         reader.readAsDataURL(file)
+        this.avatar = window.URL.createObjectURL(file)
       }
     },
     upload () {
