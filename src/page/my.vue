@@ -2,7 +2,7 @@
   <div class="my-page">
       <header>个人中心</header>
       <div class="head"  @click="jumpTo('Person')">
-          <img src="../assets/header.jpg" class="head-img">
+          <img :src="thumb_url" class="head-img">
           <div class="person-info">
             <div class="person-name">{{name}}</div>
             <div class="person-description">{{signature}}</div>
@@ -63,10 +63,10 @@ export default {
     getUserInfo () {
       let jwt = localStorage.jwt
       this.$api.get(jwt, '/users/userInfo', null, r => {
-        this.thumb_url = r.data.thumb_url
+        this.thumb_url = `http://localhost:3000/${r.data.thumb_url}`
         this.name = r.data.name
         this.signature = r.data.signature
-        localStorage.setItem('thumb_url', r.data)
+        localStorage.setItem('thumb_url', `http://localhost:3000/${r.data.thumb_url}`)
         localStorage.setItem('name', r.data.name)
         localStorage.setItem('signature', r.data.signature)
         localStorage.setItem('gender', r.data.gender)

@@ -40,6 +40,7 @@ export default {
   },
   methods: {
     getInfo () {
+      this.avatar = localStorage.thumb_url
       this.name = localStorage.name
       this.gender = localStorage.gender
       this.signature = localStorage.signature
