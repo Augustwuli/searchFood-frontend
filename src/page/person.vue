@@ -31,7 +31,7 @@ export default {
       name: '',
       gender: '',
       signature: '',
-      avatar: require('../assets/header.jpg'),
+      avatar: '',
       avatarBase64: ''
     }
   },
@@ -45,7 +45,8 @@ export default {
       this.gender = localStorage.gender
       this.signature = localStorage.signature
     },
-    setInfo (name, gender, signature) {
+    setInfo (name, gender, signature, avatar) {
+      localStorage.setItem('thumb_url', `http://localhost:3000/${avatar}`)
       localStorage.setItem('name', name)
       localStorage.setItem('gender', gender)
       localStorage.setItem('signature', signature)
@@ -59,7 +60,7 @@ export default {
         avatar: this.avatarBase64
       }
       this.$api.post(jwt, '/users/save', param, r => {
-        this.setInfo(r.data.name, r.data.gender, r.data.signature)
+        this.setInfo(r.data.name, r.data.gender, r.data.signature, r.data.avatar)
       })
     },
     changeImg (e) {

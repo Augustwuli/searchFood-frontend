@@ -53,10 +53,13 @@ export default {
     /**
      * 第一次向服务器获取数据，之后就存到本地
      */
+    console.log(localStorage.getInfo)
     if (localStorage.getInfo === true) {
+      console.log('获取本地')
       this.getLocalInfo()
     } else {
       this.getUserInfo()
+      console.log('向服务器获取')
     }
   },
   methods: {
