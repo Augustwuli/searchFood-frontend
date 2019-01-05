@@ -53,8 +53,7 @@ export default {
     /**
      * 第一次向服务器获取数据，之后就存到本地
      */
-    console.log(localStorage.getInfo)
-    if (localStorage.getInfo === true) {
+    if (localStorage.getInfo === 'true') {
       console.log('获取本地')
       this.getLocalInfo()
     } else {
@@ -73,7 +72,7 @@ export default {
         localStorage.setItem('name', r.data.name)
         localStorage.setItem('signature', r.data.signature)
         localStorage.setItem('gender', r.data.gender)
-        localStorage.setItem('getInfo', true)
+        localStorage.setItem('getInfo', 'true')
       })
     },
     getLocalInfo () {

@@ -1,0 +1,54 @@
+.add-page{
+  margin-top: 150px; 
+  font-size: 32px;
+  .bar{
+    margin-left: 20px; 
+    display: block;
+    height: 80px;
+    background: #FF954D;
+    width: 10px;
+    margin-right: 20px; 
+  }
+  .bar-title{
+    font-size: 36px;
+    height: 80px;
+    line-height: 80px;
+    color: #333;
+    font-weight: bold;
+  }
+  .add-title{
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    input{
+      width: 100%;
+      border: none;
+      outline: none;
+      font-size: 36px;
+      height: 80px;
+    }
+  }
+  .add-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    .bar{
+      margin-top: 50px; 
+      height: 600px;
+    }
+    textarea{
+      font-family: '微软雅黑';
+      padding: 20px 20px;
+      margin-top: 20px; 
+      font-size: 34px;
+      width: 100%;
+      height: 700px;
+      outline: none;
+      border-top: 1px solid #FF954D;
+      border-left:none; 
+      border-right:none; 
+      border-bottom:none; 
+    }
+  }
+}
