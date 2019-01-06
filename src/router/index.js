@@ -14,6 +14,7 @@ import Topic from '@/page/topic'
 import Discuss from '@/page/discuss'
 import Follow from '@/page/follow'
 import Add from '@/page/add'
+import Publish from '@/page/publish'
 import MessageList from '@/page/message_list'
 import Person from '@/page/person'
 
@@ -55,6 +56,11 @@ export default new Router({
       path: '/add',
       name: 'Add',
       component: Add
+    },
+    {
+      path: '/publish',
+      name: 'Publish',
+      component: Publish
     },
     {
       path: '/message-list',

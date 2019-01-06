@@ -1,0 +1,73 @@
+.publish-page{
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p{
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+  }
+  .cover{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 5px dashed #e2e2e2;
+    width: 350px;
+    height: 400px;
+    .add-icon{
+      width: 150px;
+      height: 150px;
+    }
+    img{
+      width: 350px;
+      height: 400px;
+    }
+  }
+  .labels{
+    width: 100%;
+    font-size: 28px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    .label-block{
+      border: 1px solid #e2e2e2;
+      border-radius: 10px;
+      color: #747171;
+      width: 180px;
+      margin: 20px; 
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+    }
+    .active{
+      border: 1px solid #FFCD5F;
+      border-radius: 10px;
+      color: #FFCD5F;
+      width: 180px;
+      margin: 20px; 
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+    }
+  }
+  .buttons{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .publish-button{
+      position: absolute;
+      bottom: 50px;
+      font-size: 32px;
+      background: #FF954D;
+      color: #fff;
+      width: 200px;
+      height: 80px;
+      outline: none;
+      border: none;
+      border-radius: 40px; 
+    }
+  }
+}

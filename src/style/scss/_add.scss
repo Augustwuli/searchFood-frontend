@@ -1,6 +1,7 @@
 .add-page{
   margin-top: 150px; 
   font-size: 32px;
+  position: relative;
   .bar{
     margin-left: 20px; 
     display: block;
@@ -33,22 +34,35 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    .bar{
-      margin-top: 50px; 
-      height: 600px;
-    }
     textarea{
       font-family: '微软雅黑';
       padding: 20px 20px;
       margin-top: 20px; 
-      font-size: 34px;
+      font-size: 30px;
       width: 100%;
-      height: 700px;
+      height: 1000px;
       outline: none;
       border-top: 1px solid #FF954D;
       border-left:none; 
       border-right:none; 
       border-bottom:none; 
+    }
+  }
+  .buttons{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .add-button{
+      position: absolute;
+      bottom: 50px;
+      font-size: 32px;
+      background: #FF954D;
+      color: #fff;
+      width: 200px;
+      height: 80px;
+      outline: none;
+      border: none;
+      border-radius: 40px; 
     }
   }
 }
