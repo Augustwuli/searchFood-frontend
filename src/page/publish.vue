@@ -32,7 +32,7 @@ export default {
       content: this.$route.params.content,
       label_list: [
         {
-          name: '推荐店家',
+          name: '推荐商家',
           className: 'label-block'
         },
         {
@@ -44,11 +44,9 @@ export default {
           className: 'label-block'
         }
       ],
-      label: []
+      labelClass: ['label-block', 'label-block', 'label-block'],
+      labels: []
     }
-  },
-  mounted () {
-    console.log(this.content)
   },
   methods: {
     changeImg (e) {
@@ -74,20 +72,35 @@ export default {
     click (e) {
       if (this.label_list[e].className === 'label-block') {
         this.label_list[e].className = 'active'
-        // if (this.label.indexOf(e) === -1) {
-        //   this.label.push(e)
-        // }
       } else {
         this.label_list[e].className = 'label-block'
-        // this.label.splice(this.label.indexOf(e)) 
       }
     },
     publish () {
+      this.labels = []
       let arr = document.getElementsByClassName('active')
-      for (let i = 0;i < arr.length;i++){
-        this.label.push(arr[i].attributes[0].value)
+      let jwt = localStorage.jwt
+      for (let i = 0; i < arr.length; i++) {
+        this.labels.push(Number(arr[i].attributes[0].value) + 1)
       }
-      console.log(this.label)
+      if (this.cover === '') {
+        alert('您未上传封面')
+      } else if (this.labels.length === 0) {
+        alert('您未选择标签')
+      } else {
+        // console.log(this.labels)
+        let labels = this.labels.join(',')
+        console.log(labels)
+        let params = {
+          title: this.name,
+          content: this.content,
+          thumb_url: this.cover,
+          labels: labels
+        }
+        this.$api.post(jwt, '/notes/publish', params, r => {
+          console.log(r)
+        })
+      }
     }
   }
 }

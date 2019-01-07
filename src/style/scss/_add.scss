@@ -30,6 +30,20 @@
       height: 80px;
     }
   }
+  .add-imgs{
+    margin-left: 20px; 
+    .add-icon{
+      margin: 10px;
+      border: 2px dashed #e2e2e2;
+      width: 200px;
+      height: 200px;
+    }
+    img{
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+    }
+  }
   .add-content{
     display: flex;
     flex-direction: row;
@@ -53,7 +67,7 @@
     flex-direction: row;
     justify-content: center;
     .add-button{
-      position: absolute;
+      position: fixed;
       bottom: 50px;
       font-size: 32px;
       background: #FF954D;
