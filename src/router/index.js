@@ -17,6 +17,7 @@ import Add from '@/page/add'
 import Publish from '@/page/publish'
 import MessageList from '@/page/message_list'
 import Person from '@/page/person'
+import Detail from '@/page/Detail'
 
 Vue.use(Router)
 
@@ -51,6 +52,11 @@ export default new Router({
       path: '/person',
       name: 'Person',
       component: Person
+    },
+    {
+      path: '/detail',
+      name: 'Detail',
+      component: Detail
     },
     {
       path: '/add',
