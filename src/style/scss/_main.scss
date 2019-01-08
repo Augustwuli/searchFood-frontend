@@ -35,7 +35,8 @@
       .list{
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
+        padding: 0 15px;
         flex-wrap: wrap; 
         .list-block{
           box-shadow: -2px -2px 0px #f2f2f2, 2px 2px 0px #f2f2f2;

@@ -63,13 +63,15 @@ export default {
       } else if (this.content === '') {
         alert('内容不能为空')
       } else {
-        console.log(this.imgs)
+        // localStorage.setItem('imgs', this.imgs)
+        // console.log(localStorage.imgs)
         this.$router.push({
           path: '/publish',
           name: 'Publish',
           params: {
             name: this.name,
-            content: this.content
+            content: this.content,
+            imgs: this.imgs
           }
         })
       }

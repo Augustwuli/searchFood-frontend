@@ -28,6 +28,7 @@ export default {
       title: '发布美食笔记',
       add: true,
       cover: '',
+      imgs: this.$route.params.imgs,
       name: this.$route.params.name,
       content: this.$route.params.content,
       label_list: [
@@ -45,7 +46,8 @@ export default {
         }
       ],
       labelClass: ['label-block', 'label-block', 'label-block'],
-      labels: []
+      labels: [],
+      avatarBase64: ''
     }
   },
   methods: {
@@ -88,14 +90,15 @@ export default {
       } else if (this.labels.length === 0) {
         alert('您未选择标签')
       } else {
-        // console.log(this.labels)
+        let imgs = this.imgs.join('-')
         let labels = this.labels.join(',')
         console.log(labels)
         let params = {
           title: this.name,
           content: this.content,
-          thumb_url: this.cover,
-          labels: labels
+          thumb_url: this.avatarBase64,
+          labels: labels,
+          imgs: imgs
         }
         this.$api.post(jwt, '/notes/publish', params, r => {
           console.log(r)

@@ -24,13 +24,13 @@
         <p class="recommend-title">- 为你推荐 -</p>
         <div class="list">
           <div class="list-block" v-for="(item,index) in recommend_list" :key="index">
-            <img :src="item.url">
+            <img :src="'http://localhost:3000/' + item.thumb_url">
             <div class="list-info">
                 <p class="info-title">{{item.title}}</p>
                 <div class="info-data">
-                  <div><img src="../assets/star.png"><span>{{item.star}}</span></div>
-                  <div><img src="../assets/read.png"><span>{{item.read}}</span></div>
-                  <div><img src="../assets/comment.png"><span>{{item.comment}}</span></div>
+                  <div><img src="../assets/star.png"><span>{{item.star_num}}</span></div>
+                  <div><img src="../assets/read.png"><span>{{item.read_num}}</span></div>
+                  <div><img src="../assets/comment.png"><span>{{item.comment_num}}</span></div>
                 </div>
             </div>
           </div>
@@ -59,35 +59,48 @@ export default {
         }
       ],
       recommend_list: [
-        {
-          url: require('../assets/food1.jpg'),
-          title: '日系小精致不容错过的豚骨拉面不容错过的豚骨拉面',
-          star: 10,
-          read: 400,
-          comment: 2
-        },
-        {
-          url: require('../assets/food2.jpg'),
-          title: '不容错过的豚骨拉面不容错过的豚骨拉面不容错过的豚骨拉面',
-          star: 10,
-          read: 400,
-          comment: 2
-        },
-        {
-          url: require('../assets/food3.jpg'),
-          title: '海鲜面不容错过的豚骨拉面不容错过的豚骨拉面',
-          star: 10,
-          read: 400,
-          comment: 2
-        },
-        {
-          url: require('../assets/food4.jpg'),
-          title: '日系小精致不容错过的豚骨拉面不容错过的豚骨拉面',
-          star: 10,
-          read: 400,
-          comment: 2
-        }
+        // {
+        //   url: require('../assets/food1.jpg'),
+        //   title: '日系小精致不容错过的豚骨拉面不容错过的豚骨拉面',
+        //   star: 10,
+        //   read: 400,
+        //   comment: 2
+        // },
+        // {
+        //   url: require('../assets/food2.jpg'),
+        //   title: '不容错过的豚骨拉面不容错过的豚骨拉面不容错过的豚骨拉面',
+        //   star: 10,
+        //   read: 400,
+        //   comment: 2
+        // },
+        // {
+        //   url: require('../assets/food3.jpg'),
+        //   title: '海鲜面不容错过的豚骨拉面不容错过的豚骨拉面',
+        //   star: 10,
+        //   read: 400,
+        //   comment: 2
+        // },
+        // {
+        //   url: require('../assets/food4.jpg'),
+        //   title: '日系小精致不容错过的豚骨拉面不容错过的豚骨拉面',
+        //   star: 10,
+        //   read: 400,
+        //   comment: 2
+        // }
       ]
+    }
+  },
+  created () {
+    this.getData()
+  },
+  methods: {
+    getData () {
+      let params = {
+
+      }
+      this.$api.get(null, '/notes/list', params, r => {
+        this.recommend_list = r.data.notes
+      })
     }
   }
 }
