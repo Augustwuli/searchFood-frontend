@@ -89,5 +89,8 @@ module.exports = {
     net: 'empty',
     tls: 'empty',
     child_process: 'empty'
+  },
+  externals: {
+    "BMap": "BMap"
   }
 }

@@ -43,6 +43,7 @@
 <script>
 import search from '../components/search.vue'
 import { Swiper, Slide } from 'vue-swiper-component'
+import BMap from 'BMap'
 export default {
   components: {search, Swiper, Slide},
   data () {
@@ -91,9 +92,19 @@ export default {
     }
   },
   created () {
+    localStorage.setItem('cityName', '')
+    if (localStorage.cityName !== '') {
+      let myCity = new BMap.LocalCity()
+      myCity.get(this.myFun)
+    }
     this.getData()
   },
   methods: {
+    myFun (result) {
+      let cityName = result.name
+      console.log(`当前定位城市:"${cityName}`)
+      localStorage.setItem('cityName', cityName)
+    },
     getData () {
       this.$api.get(null, '/notes/list', null, r => {
         this.recommend_list = r.data.notes
