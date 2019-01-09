@@ -79,6 +79,7 @@ export default {
       this.thumb_url = localStorage.thumb_url
       this.name = localStorage.name
       this.signature = localStorage.signature
+      this.thumb_url = localStorage.thumb_url
     },
     jumpTo (pageName) {
       this.$router.push({name: pageName})

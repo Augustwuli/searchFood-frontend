@@ -46,9 +46,11 @@ export default {
       this.signature = localStorage.signature
     },
     setInfo (name, gender, signature, avatar) {
-      localStorage.setItem('thumb_url', `http://localhost:3000/${avatar}`)
       localStorage.setItem('name', name)
       localStorage.setItem('gender', gender)
+      if (avatar !== '') {
+        localStorage.setItem('thumb_url', `http://localhost:3000/${avatar}`)
+      }
       localStorage.setItem('signature', signature)
     },
     save () {
