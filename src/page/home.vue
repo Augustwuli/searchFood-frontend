@@ -28,9 +28,9 @@
             <div class="list-info">
                 <p class="info-title">{{item.title}}</p>
                 <div class="info-data">
-                  <div><img src="../assets/star.png"><span>{{item.star_num}}</span></div>
                   <div><img src="../assets/read.png"><span>{{item.read_num}}</span></div>
                   <div><img src="../assets/comment.png"><span>{{item.comment_num}}</span></div>
+                  <div><img src="../assets/star.png"><span>{{item.star_num}}</span></div>
                 </div>
             </div>
           </div>

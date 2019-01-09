@@ -75,6 +75,14 @@ export default {
   created () {
     this.getData()
   },
+  beforeDestroy () {
+    let params = {
+      noteId: this.noteId,
+      read_num: this.detail.read_num
+    }
+    console.log(params)
+    this.$api.post(null, `/notes/read`, params, r => {})
+  },
   methods: {
     getData () {
       this.$api.get(null, `/notes/${this.noteId}`, null, r => {
