@@ -1,4 +1,5 @@
 .detail-page{
+  margin-top: 100px;
   .auth{
     display: flex;
     flex-direction: row;
@@ -75,9 +76,6 @@
           display: flex;
           flex-direction: row;
           justify-content: space-between;
-        }
-        .comment-content{
-          font-size: 18px;
         }
       }
     }

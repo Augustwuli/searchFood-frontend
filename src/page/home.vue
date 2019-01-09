@@ -23,7 +23,7 @@
     <div class="recommend">
         <p class="recommend-title">- 为你推荐 -</p>
         <div class="list">
-          <div class="list-block" v-for="(item,index) in recommend_list" :key="index">
+          <div class="list-block" v-for="(item,index) in recommend_list" :key="index" @click="click(item.id)">
             <img :src="'http://localhost:3000/' + item.thumb_url">
             <div class="list-info">
                 <p class="info-title">{{item.title}}</p>
@@ -95,11 +95,17 @@ export default {
   },
   methods: {
     getData () {
-      let params = {
-
-      }
-      this.$api.get(null, '/notes/list', params, r => {
+      this.$api.get(null, '/notes/list', null, r => {
         this.recommend_list = r.data.notes
+      })
+    },
+    click (id) {
+      this.$router.push({
+        path: '/detail',
+        name: 'Detail',
+        params: {
+          id: id
+        }
       })
     }
   }
