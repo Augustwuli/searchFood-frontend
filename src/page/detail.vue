@@ -44,7 +44,7 @@
       </div>
     </div>
     <div class="add-comment">
-      <img src="../assets/header.jpg">
+      <img :src="thumb_url">
       <input v-model="comment" placeholder="添加评论...">
     </div>
   </div>
@@ -61,6 +61,7 @@ export default {
       comment: '',
       title: '笔记内容',
       list: [],
+      thumb_url: '',
       auth_info: {},
       detail: {},
       comment_list: [
@@ -86,6 +87,7 @@ export default {
   methods: {
     getData () {
       this.$api.get(null, `/notes/${this.noteId}`, null, r => {
+        this.thumb_url = localStorage.thumb_url
         this.list = r.data.img_lists
         this.auth_info = r.data.auth_info
         this.detail = r.data.detail

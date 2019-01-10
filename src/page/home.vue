@@ -21,7 +21,7 @@
        </div>
     </div>
     <div class="recommend">
-        <p class="recommend-title">- 为你推荐 -</p>
+        <p class="recommend-title">- 为您推荐【{{cityName}}】的美食 -</p>
         <div class="list">
           <div class="list-block" v-for="(item,index) in recommend_list" :key="index" @click="click(item.id)">
             <img :src="'http://localhost:3000/' + item.thumb_url">
@@ -48,6 +48,7 @@ export default {
   components: {search, Swiper, Slide},
   data () {
     return {
+      cityName: '',
       list: [
         {
           url: require('../assets/banner/first.jpg')
@@ -92,11 +93,11 @@ export default {
     }
   },
   created () {
-    localStorage.setItem('cityName', '')
-    if (localStorage.cityName !== '') {
+    if (localStorage.cityName === '') {
       let myCity = new BMap.LocalCity()
       myCity.get(this.myFun)
     }
+    this.cityName = localStorage.cityName
     this.getData()
   },
   methods: {
@@ -104,6 +105,7 @@ export default {
       let cityName = result.name
       console.log(`当前定位城市:"${cityName}`)
       localStorage.setItem('cityName', cityName)
+      this.cityName = localStorage.cityName
     },
     getData () {
       this.$api.get(null, '/notes/list', null, r => {

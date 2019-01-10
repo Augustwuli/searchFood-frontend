@@ -44,6 +44,7 @@ export default {
           if (r.statu === 1) {
             localStorage.setItem('jwt', r.data.jwt)
             localStorage.setItem('getInfo', false)
+            localStorage.setItem('cityName', '')
             this.$router.push({name: 'Home'})
           }
         })
