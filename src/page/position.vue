@@ -21,7 +21,7 @@ export default {
   methods: {
     click (e) {
       console.log(this.list[e])
-      localStorage.setItem('cityName', `${this.list[e]}市`)
+      localStorage.setItem('cityName', `${this.list[e]}`)
     }
   }
 }

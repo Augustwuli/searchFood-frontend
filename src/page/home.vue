@@ -21,7 +21,7 @@
        </div>
     </div>
     <div class="recommend">
-        <p class="recommend-title">- 为您推荐【{{cityName}}】的美食 -</p>
+        <p class="recommend-title">- 为您推荐【{{cityName}}市】的美食 -</p>
         <div class="list">
           <div class="list-block" v-for="(item,index) in recommend_list" :key="index" @click="click(item.id)">
             <img :src="'http://localhost:3000/' + item.thumb_url">
@@ -102,13 +102,13 @@ export default {
   },
   methods: {
     myFun (result) {
-      let cityName = result.name
-      console.log(`当前定位城市:"${cityName}`)
-      localStorage.setItem('cityName', cityName)
+      let cityName = result.name.split('市')
+      console.log(`当前定位城市:"${cityName[0]}`)
+      localStorage.setItem('cityName', cityName[0])
       this.cityName = localStorage.cityName
     },
     getData () {
-      this.$api.get(null, '/notes/list', null, r => {
+      this.$api.get(null, `/notes/list/${this.cityName}`, null, r => {
         this.recommend_list = r.data.notes
       })
     },
