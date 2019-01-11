@@ -19,6 +19,7 @@ import MessageList from '@/page/message_list'
 import Person from '@/page/person'
 import Detail from '@/page/detail'
 import Position from '@/page/position'
+import Sort from '@/page/sort'
 
 Vue.use(Router)
 
@@ -63,6 +64,11 @@ export default new Router({
       path: '/position',
       name: 'Position',
       component: Position
+    },
+    {
+      path: '/sort',
+      name: 'Sort',
+      component: Sort
     },
     {
       path: '/add',

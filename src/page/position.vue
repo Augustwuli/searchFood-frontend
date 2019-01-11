@@ -22,6 +22,7 @@ export default {
     click (e) {
       console.log(this.list[e])
       localStorage.setItem('cityName', `${this.list[e]}`)
+      this.$router.go(-1)
     }
   }
 }
