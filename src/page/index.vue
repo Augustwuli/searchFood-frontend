@@ -31,7 +31,6 @@ export default {
     getData () {
       this.$api.get(null, '/', null, r => {
         this.list = r.data
-        console.log(r)
       })
     }
   }

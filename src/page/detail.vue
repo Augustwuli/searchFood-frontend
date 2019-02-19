@@ -15,7 +15,8 @@
           <div>粉丝：{{auth_info.fans}}</div>
         </div>
       </div>
-      <img class="star" src="../assets/star.png">
+      <img class="star" v-if="star" src="../assets/star.png" @click="getStar">
+      <img class="star" v-else src="../assets/unstar.png" @click="getStar">
     </div>
     <div class="content">
       <div class="read">
@@ -70,7 +71,8 @@ export default {
           date: '2019-01-02',
           content: '说的真好'
         }
-      ]
+      ],
+      star: false
     }
   },
   created () {
@@ -92,6 +94,17 @@ export default {
         this.auth_info = r.data.auth_info
         this.detail = r.data.detail
         console.log(r.data)
+      })
+    },
+    getStar () {
+      this.star = !this.star
+      let jwt = localStorage.jwt
+      let params = {
+        noteId: this.noteId,
+        star: this.star
+      }
+      console.log(params)
+      this.$api.post(jwt, '/notes/star', params, r => {
       })
     }
   }
