@@ -89,7 +89,8 @@ export default {
   },
   methods: {
     getData () {
-      this.$api.get(null, `/notes/${this.noteId}`, null, r => {
+      let jwt = localStorage.jwt
+      this.$api.get(jwt, `/notes/${this.noteId}`, null, r => {
         this.thumb_url = localStorage.thumb_url
         this.list = r.data.img_lists
         this.auth_info = r.data.auth_info
