@@ -72,6 +72,9 @@
       .list-block{
         margin-top: 20px;
         padding-bottom: 10px; 
+        .comment-content{
+          margin-top: 10px;
+        }
         .info{
           display: flex;
           flex-direction: row;
@@ -117,6 +120,17 @@
       outline: none;
       border: none;
       margin-left: 20px; 
+    }
+    button{
+      height: 60px;
+      width: 120px;
+      font-size: 30px;
+      color: #fff;
+      background: #FF954D;
+      outline: none;
+      position: absolute;
+      right: 0px;
+      border: 20px;
     }
   }
 }

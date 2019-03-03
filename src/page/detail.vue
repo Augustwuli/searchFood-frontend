@@ -47,6 +47,7 @@
     <div class="add-comment">
       <img :src="thumb_url">
       <input v-model="comment" placeholder="添加评论...">
+      <button @click="confirm">确认</button>
     </div>
   </div>
 </template>
@@ -105,6 +106,17 @@ export default {
       }
       console.log(params)
       this.$api.post(jwt, '/notes/star', params, r => {
+      })
+    },
+    confirm () {
+      console.log(this.noteId)
+      let jwt = localStorage.jwt
+      let params = {
+        noteId: this.noteId,
+        content: this.comment
+      }
+      console.log(params)
+      this.$api.post(jwt, '/comments/publish', params, r => {
       })
     }
   }
